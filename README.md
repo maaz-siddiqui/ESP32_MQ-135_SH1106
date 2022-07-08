@@ -142,12 +142,12 @@ Use the Library manager to install :
 #define RatioMQ135CleanAir 3.6//RS / R0 = 3.6 ppm  
 ```
 
-## Contributing
+### Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 <!-- LICENSE -->
-## License
+### License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+### Contact
 
 Maaz Siddiqui - maaz.siddiqui3073@gmail.com
 
@@ -167,16 +167,16 @@ Project Link: [ESP32_MQ-135_SH1106](https://github.com/maaz-siddiqui/ESP32_MQ-13
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[contributors-shield]: https://img.shields.io/github/contributors/maaz-siddiqui/ESP32_MQ-135_SH1106.svg?style=for-the-badge
+[contributors-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/maaz-siddiqui/ESP32_MQ-135_SH1106.svg?style=for-the-badge
+[forks-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/network/members
+[stars-shield]: https://img.shields.io/github/stars/maaz-siddiqui/ESP32_MQ-135_SH1106.svg?style=for-the-badge
+[stars-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/stargazers
+[issues-shield]: https://img.shields.io/github/issues/maaz-siddiqui/ESP32_MQ-135_SH1106.svg?style=for-the-badge
+[issues-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/blob/master/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/siddiqui-maaz
