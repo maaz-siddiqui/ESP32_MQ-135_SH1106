@@ -175,7 +175,7 @@ Project Link: [ESP32_MQ-135_SH1106](https://github.com/maaz-siddiqui/ESP32_MQ-13
 [stars-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/stargazers
 [issues-shield]: https://img.shields.io/github/issues/maaz-siddiqui/ESP32_MQ-135_SH1106.svg?style=for-the-badge
 [issues-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/maaz-siddiqui/ESP32_MQ-135_Sh1106.svg?style=for-the-badge
 [license-url]: https://github.com/maaz-siddiqui/ESP32_MQ-135_Sh1106/blob/master/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
