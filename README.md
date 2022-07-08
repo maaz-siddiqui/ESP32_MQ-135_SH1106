@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/maaz-siddiqui/ESP32_MQ-135_SH1106/blob/readme/Images/Prototype.jpeg)
+![alt text](Image/Prototype.jpeg)
 
 Air Quality monitoring system using ESP32. Diplsay used is OLED Display with Air Quality Sensor MQ135.
 
