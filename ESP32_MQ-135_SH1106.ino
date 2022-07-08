@@ -21,9 +21,11 @@ void setup() {
   Wire.begin();
   display.init();
   display.setFont(ArialMT_Plain_10);
+  display.invertDisplay();
+  display.flipScreenVertically();
   //Set math model to calculate the PPM concentration and the value of constants
   MQ135.setRegressionMethod(1); //_PPM =  a*ratio^b
-  // MQ135.setA(110.47); MQ135.setB(-2.862); // Configure the equation to to calculate C02 concentration
+  MQ135.setA(110.47); MQ135.setB(-2.862); // Configure the equation to to calculate C02 concentration
   // MQ135.setA(102.2); MQ135.setB(-2.473); // Configure the equation to to calculate NH4 concentration
   // MQ135.setA(77.255); MQ135.setB(-3.18); // Configure the equation to to calculate Alcohol concentration
 
@@ -107,12 +109,14 @@ float NH4, CO2, ALC;
   // MQ135.readSensor(); // Sensor will read PPM concentration using the model, a and b values set previously or from the setup
 
   // float h = lightMeter.readLightLevel();
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 0, "AIR QUALITY" );
   display.setTextAlignment(TEXT_ALIGN_LEFT);
-  display.drawString(0, 0, "CO2 : "+ String(CO2) + " PPM" );
+  display.drawString(0, 14, "CO2 : "+ String(CO2) + " PPM" );
   display.setTextAlignment(TEXT_ALIGN_LEFT);
-  display.drawString(0, 14, "NH4 : " + String(NH4) + " PPM" );
+  display.drawString(0, 28, "NH4 : " + String(NH4) + " PPM" );
   display.setTextAlignment(TEXT_ALIGN_LEFT);
-  display.drawString(0, 28, "ALCOHOL : " + String(ALC) + " PPM" );
+  display.drawString(0, 42, "ALCOHOL : " + String(ALC) + " PPM" );
     
 }
 

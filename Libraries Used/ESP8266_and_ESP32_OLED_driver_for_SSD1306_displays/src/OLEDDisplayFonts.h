@@ -6,8 +6,8 @@
 #endif
 
 const uint8_t ArialMT_Plain_10[] PROGMEM = {
-  0x0A, // Width: 10
-  0x0D, // Height: 13
+  0x0D, // Width: 10
+  0x0F, // Height: 13
   0x20, // First Char: 32
   0xE0, // Numbers of Chars: 224
 
