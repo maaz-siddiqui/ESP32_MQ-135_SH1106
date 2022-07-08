@@ -103,13 +103,12 @@ This section should list components required to get started:
 Software
 
 * [![Arduino][Arduino IDE]][arduino-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+
+Hardware
+
+* ESP32 Dev Module
+* MQ-135 Module
+* SH1106 OLED i2c 128x64
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -118,16 +117,9 @@ Software
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Install libraries provided manually as MQunifiedsensor library is modified. Set pin A0 of MQ135 to ADC pin of ESP32. Setup SH1106 pin of SDA SCL with ESP32 SDA SCL. Select appropriate board and port.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
