@@ -36,7 +36,7 @@
   <h3 align="center">Air-Quality Monitoring</h3>
 
   <p align="center">
-    Air Quality Monitoring Using MQ135 Sensor.
+    Air Quality Monitoring Using MQ135 Sensor and DHT-11.
     <br />
     <a href="https://components101.com/sensors/mq135-gas-sensor-for-air-quality"><strong>Explore the docs »</strong></a>
     <br />
@@ -80,7 +80,7 @@
 
 ![alt text](Images/Prototype.jpeg)
 
-Air Quality monitoring system using ESP32. Diplsay used is OLED Display with Air Quality Sensor MQ135.
+Air Quality monitoring system using ESP32. Diplsay used is OLED Display with Air Quality Sensor MQ135 and DHT-11.
 
 Monitors :
 * Carbon Dioxide CO2
@@ -105,6 +105,7 @@ Hardware
 * ESP32 Dev Module
 * MQ-135 Module
 * SH1106 OLED i2c 128x64
+* DHT-11 Module
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
