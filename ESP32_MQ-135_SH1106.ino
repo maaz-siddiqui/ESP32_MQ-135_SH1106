@@ -1,26 +1,26 @@
 //Include the library
-#include "DHTesp.h" // Click here to get the library: http://librarymanager/All#DHTesp
+#include "DHTesp.h"
 #include <Ticker.h>
+#include <MQUnifiedsensor.h>
+#include "SH1106Wire.h"
+#include <Wire.h>
 
 #ifndef ESP32
 #pragma message(THIS EXAMPLE IS FOR ESP32 ONLY!)
 #error Select ESP32 board.
 #endif
 
-#include <MQUnifiedsensor.h>
-#include "SH1106Wire.h"
-#include <Wire.h>
 //Definitions
 #define board ("ESP-32")
 #define Voltage_Resolution 3.3
-#define pin 15 //Analog input 0 of your arduino
+#define pin 15 //Analog Input 0 of ESP32
 #define type "MQ-135" //MQ135
-#define ADC_Bit_Resolution 12 // For arduino UNO/MEGA/NANO
-#define RatioMQ135CleanAir 3.6//RS / R0 = 3.6 ppm  
-//#define calibration_button 13 //Pin to calibrate your sensor
+#define ADC_Bit_Resolution 12 // For ESP32
+#define RatioMQ135CleanAir 3.6// RS / R0 = 3.6 ppm
+
 //Declare Sensor
 MQUnifiedsensor MQ135(board, Voltage_Resolution, ADC_Bit_Resolution, pin, type);
-SH1106Wire display(0x3c, 21, 22); //oled instance with address and SDA and SCL pins
+SH1106Wire display(0x3c, 21, 22); // oled instance with address and SDA and SCL pins
 DHTesp dht;
 void tempTask(void *pvParameters);
 bool getTemperature();
@@ -66,8 +66,8 @@ bool initTemp() {
     Serial.println("Failed to start task for temperature update");
     return false;
   } else {
-    // Start update of environment data every 20 seconds
-    tempTicker.attach(20, triggerGetTemp);
+    // Start update of environment data every 1 seconds
+    tempTicker.attach(5, triggerGetTemp);
   }
   return true;
 }
@@ -118,51 +118,18 @@ bool getTemperature() {
 		return false;
 	}
 
-	float heatIndex = dht.computeHeatIndex(newValues.temperature, newValues.humidity);
-  float dewPoint = dht.computeDewPoint(newValues.temperature, newValues.humidity);
-  float cr = dht.getComfortRatio(cf, newValues.temperature, newValues.humidity);
-
-  String comfortStatus;
-  switch(cf) {
-    case Comfort_OK:
-      comfortStatus = "Comfort_OK";
-      break;
-    case Comfort_TooHot:
-      comfortStatus = "Comfort_TooHot";
-      break;
-    case Comfort_TooCold:
-      comfortStatus = "Comfort_TooCold";
-      break;
-    case Comfort_TooDry:
-      comfortStatus = "Comfort_TooDry";
-      break;
-    case Comfort_TooHumid:
-      comfortStatus = "Comfort_TooHumid";
-      break;
-    case Comfort_HotAndHumid:
-      comfortStatus = "Comfort_HotAndHumid";
-      break;
-    case Comfort_HotAndDry:
-      comfortStatus = "Comfort_HotAndDry";
-      break;
-    case Comfort_ColdAndHumid:
-      comfortStatus = "Comfort_ColdAndHumid";
-      break;
-    case Comfort_ColdAndDry:
-      comfortStatus = "Comfort_ColdAndDry";
-      break;
-    default:
-      comfortStatus = "Unknown:";
-      break;
-  };
-
-  Serial.println(" T:" + String(newValues.temperature) + " H:" + String(newValues.humidity) + " I:" + String(heatIndex) + " D:" + String(dewPoint) + " " + comfortStatus);
+  // Serial.println(" T:" + String(newValues.temperature) + " H:" + String(newValues.humidity));
   
   display.clear();
-  display.setTextAlignment(TEXT_ALIGN_LEFT);
-  display.drawString(0, 0, "TEMP : " + String(newValues.temperature) + "  C" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 0, "IoT" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 14, "MONITORING DEVICE" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 28, "Temperature : " + String(newValues.temperature) + "  C" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 42, "Humidity : " + String(newValues.humidity) + "  %" );
   display.display();
-  delay(2000);
   return true;
 }
 
@@ -219,11 +186,9 @@ void setup() {
   tasksEnabled = true;
 }
 void loop() {
-  printDisplay();
-  if (!tasksEnabled) {
-    // Wait 2 seconds to let system settle down
-    delay(2000);
     
+  if (!tasksEnabled) {
+    // Wait 2 seconds to let system settle down    
     // Enable task that will read values from the DHT sensor
     tasksEnabled = true;
     if (tempTaskHandle != NULL) {
@@ -232,6 +197,8 @@ void loop() {
     
   }
   yield();
+  printDisplay();
+  delay(5000);
 }
 
 
@@ -268,11 +235,13 @@ float NH4, CO2, ALC;
 
   // float h = lightMeter.readLightLevel();
   display.setTextAlignment(TEXT_ALIGN_CENTER);
-  display.drawString(64, 0, "AIR QUALITY" );
-  display.setTextAlignment(TEXT_ALIGN_LEFT);
-  display.drawString(0, 14, "CO2 : "+ String(CO2) + " PPM" );
-  display.setTextAlignment(TEXT_ALIGN_LEFT);
-  display.drawString(0, 28, "NH4 : " + String(NH4) + " PPM" );
+  display.drawString(64, 0, "IoT" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 14, "MONITORING DEVICE" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 28, "CO2 : "+ String(CO2) + " PPM" );
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(64, 42, "NH4 : " + String(NH4) + " PPM" );
   // display.setTextAlignment(TEXT_ALIGN_LEFT);
   // display.drawString(0, 42, "TEMP : " + String(ALC) + " PPM" );
     
