@@ -85,7 +85,8 @@ Air Quality monitoring system using ESP32. Diplsay used is OLED Display with Air
 Monitors :
 * Carbon Dioxide CO2
 * Ammonia NH4
-* Alcohol
+* Temprature
+* Humidity
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -125,6 +126,8 @@ Use the Library manager to install :
 #include <MQUnifiedsensor.h>
 #include "SH1106Wire.h"
 #include <Wire.h>
+#include "DHTesp.h"
+#include <Ticker.h>
 ```
 
 ### Setup
