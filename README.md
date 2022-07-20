@@ -85,7 +85,7 @@ Air Quality monitoring system using ESP32. Diplsay used is OLED Display with Air
 Monitors :
 * Carbon Dioxide CO2
 * Ammonia NH4
-* Temprature
+* Temperature
 * Humidity
 
 
